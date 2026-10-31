@@ -1,0 +1,167 @@
+.rwsv-toggle {
+  position: absolute;
+  /* Top-left, beside RideWithGPS's fullscreen control; the bottom of the map is covered by the elevation panel. */
+  left: 64px;
+  top: 10px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px 6px 8px;
+  border: 0;
+  border-radius: 6px;
+  background: #fff;
+  color: #333;
+  font: 600 13px/1 system-ui, sans-serif;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.rwsv-toggle:hover {
+  background: #f3f3f3;
+}
+
+.rwsv-toggle.rwsv-active {
+  background: #f5b400;
+  color: #222;
+}
+
+.rwsv-picking .maplibregl-canvas-container.maplibregl-interactive,
+.rwsv-picking .maplibregl-canvas {
+  cursor: crosshair !important;
+}
+
+.rwsv-marker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.rwsv-marker-dot {
+  position: absolute;
+  left: -8px;
+  top: -8px;
+  width: 16px;
+  height: 16px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: #f5b400;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+/* Wedge pointing in the Street View heading; rotated from the marker's centre. */
+.rwsv-marker-arrow {
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  width: 40px;
+  height: 40px;
+  background: conic-gradient(from -30deg, rgba(245, 180, 0, 0.75) 0 60deg, transparent 60deg);
+  border-radius: 50%;
+  -webkit-mask: radial-gradient(circle, transparent 7px, #000 8px);
+  mask: radial-gradient(circle, transparent 7px, #000 8px);
+}
+
+.rwsv-panel {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2147483000;
+  display: flex;
+  flex-direction: column;
+  width: 480px;
+  height: 340px;
+  min-width: 260px;
+  min-height: 180px;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+  resize: both;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  font: 13px/1.2 system-ui, sans-serif;
+  color: #222;
+}
+
+.rwsv-panel[hidden],
+.rwsv-empty[hidden] {
+  display: none;
+}
+
+.rwsv-header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px 4px 10px;
+  background: #2b2b2b;
+  color: #fff;
+  cursor: move;
+  user-select: none;
+  touch-action: none;
+}
+
+.rwsv-coords {
+  margin-left: 6px;
+  overflow: hidden;
+  color: #bbb;
+  font-variant-numeric: tabular-nums;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rwsv-spacer {
+  flex: 1;
+}
+
+.rwsv-btn {
+  min-width: 26px;
+  height: 26px;
+  padding: 0 6px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  line-height: 26px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.rwsv-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.rwsv-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.rwsv-body {
+  position: relative;
+  flex: 1;
+  background: #111;
+}
+
+.rwsv-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.rwsv-empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+}
