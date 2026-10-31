@@ -2,6 +2,8 @@
 
 A Chrome and Firefox extension for the [RideWithGPS route planner](https://ridewithgps.com/routes/new). Pick a point on the map and a Google Street View panel opens at that spot.
 
+![The Street View panel open on a RideWithGPS route, with the yellow marker showing the picked point and heading](docs/screenshot.webp)
+
 ## Features
 
 - A **Street View** button sits at the top left of the map. Turn it on, then click the map to pick a point. Clicks in this mode never add control points to your route. Press it again, or press `Esc`, to go back to normal planning.
